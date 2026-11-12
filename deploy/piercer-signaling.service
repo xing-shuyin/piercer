@@ -1,0 +1,14 @@
+[Unit]
+Description=Piercer WebSocket Signaling Server
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/piercer
+ExecStart=/opt/piercer/signaling-server
+Restart=always
+RestartSec=3
+# 若需改监听端口: Environment=LISTEN_ADDR=:8080
+
+[Install]
+WantedBy=multi-user.target

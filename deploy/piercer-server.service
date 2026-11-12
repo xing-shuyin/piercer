@@ -1,0 +1,18 @@
+[Unit]
+Description=Piercer File Server (WebRTC P2P)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/piercer
+ExecStart=/opt/piercer/piercer-server
+Environment=SHARED_DIR=/opt/piercer/shared
+# 信令地址：改成你自己的公网 IP，勿提交真实 IP
+# 优先级：PIERCER_SIGNAL_ADDR > SIGNAL_ADDR > 按 PIERCER_PUBLIC_IP 自动拼接
+#Environment=SIGNAL_ADDR=ws://YOUR_SERVER_IP:8080/ws
+#Environment=PIERCER_PUBLIC_IP=YOUR_SERVER_IP
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

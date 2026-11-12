@@ -1,0 +1,21 @@
+# 二进制
+signaling-server
+piercer-server
+piercer-client
+bin/
+
+# 本地部署档案（含真实IP/凭证，绝不提交）
+.deploy.local.md
+.env.local
+.env
+.env.*
+!.env.example
+
+# 本地下载目录 / 测试数据
+downloads/
+shared/
+*.test
+
+# 系统文件
+.DS_Store
+*.log
